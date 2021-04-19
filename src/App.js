@@ -6,7 +6,7 @@ function App() {
   const [apitext, setApitext] = useState("");
   useEffect(() => {
     fetch(
-      "https://h7iuo18683.execute-api.us-east-1.amazonaws.com/default/helloworld"
+      "https://5522bbjd03.execute-api.us-east-1.amazonaws.com/default/helloworld"
     )
       .then((res) => res.json())
       .then((result) => {

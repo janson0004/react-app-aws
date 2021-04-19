@@ -1,7 +1,19 @@
+import React, { useState, useEffect } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
+  const [apitext, setApitext] = useState("");
+  useEffect(() => {
+    fetch(
+      "https://h7iuo18683.execute-api.us-east-1.amazonaws.com/default/helloworld"
+    )
+      .then((res) => res.json())
+      .then((result) => {
+        setApitext(result.text + result.time);
+      });
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
